@@ -1,0 +1,305 @@
+body {
+	font: 12px/150% tahoma, arial, Microsoft YaHei, Hiragino Sans GB, "\u5b8b\u4f53", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	color: #666;
+	background: #fff;
+}
+
+.orderInfo-tip {
+	border: 1px solid #edd491;
+	background: #fffdee;
+	padding: 0 20px;
+	line-height: 25px;
+	margin-bottom: 5px;
+	display: block;
+}
+
+.orderInfo-tip .wicon {
+	margin-right: 5px;
+	width: 12px;
+	height: 16px;
+	overflow: hidden;
+	background: url(//misc.360buyimg.com/user/purchase/2.0.0/css/i/light-icon.png) 0 0 no-repeat;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	top: -1px;
+}
+
+.ftx-03,
+.ftx03 {
+	color: #999;
+}
+
+.orderInfo-tip .cls-btn {
+	float: right;
+	color: #f60;
+	cursor: pointer;
+}
+
+.checkout-tit {
+	height: 42px;
+	line-height: 42px;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	overflow: hidden;
+}
+
+.checkout-steps {
+	background-color: #fff;
+	padding: 0 20px;
+	border: 1px solid #f0f0f0;
+}
+
+.checkout-steps .step-tit {
+	line-height: 40px;
+	height: 40px;
+	color: #333;
+}
+
+.checkout-steps .step-tit h3 {
+	font-size: 14px;
+	height: 40px;
+	line-height: 40px;
+	float: left;
+}
+
+h3 {
+	display: block;
+	font-size: 1.17em;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+}
+
+.checkout-steps .step-cont {
+	margin-bottom: 10px;
+}
+
+.checkout-steps .step-tit .extra-r {
+	float: right;
+}
+
+.checkout-steps .step-tit {
+	line-height: 40px;
+	height: 40px;
+	color: #333;
+}
+
+.consignee-scroll .consignee-cont li {
+	list-style: none;
+	height: 30px;
+	margin: 6px 0;
+	float: left;
+	width: 99.8%;
+}
+
+.item-selected {
+	border: 2px solid #e4393c;
+	padding: 4px 10px;
+	list-style: none;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+	cursor: pointer;
+	background-color: #fff;
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+	width: 160px;
+}
+
+.addr-detail span {
+	margin-right: 20px;
+}
+
+.step_add_li {
+	margin: 0 10px 0 20px;
+	overflow: hidden;
+}
+
+.hr {
+    border-bottom: 1px solid #e6e6e6;
+    height: 10px;
+}
+
+
+.picksite-nosuport-cont {
+    padding: 10px;
+}
+
+.tips-cont {
+    color: #999;
+}
+.ml10 {
+    margin-left: 10px;
+}
+
+.tips-cont b {
+    width: 12px;
+    height: 16px;
+    background: url(//misc.360buyimg.com/user/purchase/2.0.0/css/i/light-icon.png) 0 0 no-repeat;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 5px;
+    top: -2px;
+}
+
+.squater{
+	float: left;
+	padding: 5px 20px;
+	border:1px solid #e6e6e6;
+	margin-right: 10px;
+}
+
+.tips-new-white {
+    position: relative;
+    margin-left: 15px;
+    float: left;
+}
+
+.tips-new-white span {
+    float: left;
+    background-color: #fff;
+    color: #333;
+    padding: 5px 10px;
+    vertical-align: middle;
+    line-height: 20px;
+    margin-top: 5px;
+    box-shadow: 0 0 3px rgba(0,0,0,.15);
+    border: 1px solid #ddd;
+}
+
+.order-summary .statistic {
+    width: 300px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.fr {
+    float: right;
+}
+
+.order-summary .statistic .list {
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    zoom: 1;
+}
+
+.order-summary .statistic span {
+    width: 180px;
+    margin-right: 20px;
+    float: left;
+    text-align: right;
+}
+
+.order-summary .statistic .price {
+    color: #333;
+    float: left;
+    width: 100px;
+    text-align: right;
+    font-family: verdana;
+}
+
+.trade-foot-detail-com {
+    padding: 15px 10px 15px 0;
+    line-height: 20px;
+    text-align: right;
+    border-top: 1px solid #e6e6e6;
+    width: 980px;
+    color: #999;
+    background-color: #f4f4f4;
+}
+
+.selectboder{
+	border: 2px solid #e4393c;
+}
+
+#success_tittle {
+    display: block;
+    height: 50px;
+}
+
+.msop .mt {
+    overflow: visible;
+}
+
+.msop .mt .icon-succ02 {
+    margin-left: -60px;
+    float: left;
+}
+
+.icon-succ02, .icon-warn02, .icon-wrong02 {
+    background-image: url(//misc.360buyimg.com/user/purchase/2.0.0/widget/trade-success/i/icon48.png);
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    width: 48px;
+    height: 48px;
+}
+
+s, strike, del {
+    text-decoration: line-through;
+}
+
+.msop .mt h3 {
+    font-size: 18px;
+    font-family: "Microsoft YaHei";
+    font-weight: 400;
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+.ftx-02 {
+    color: #7ABD54;
+}
+.ftx-02, .ftx02 {
+    color: #86ca7f;
+}
+
+#success_detail, .msop {
+    overflow: visible;
+}
+.msop {
+    position: relative;
+    background: #F3FDED;
+    border-top: 2px solid #7ABD54;
+    padding-right: 20px;
+    padding-left: 100px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+#success_detail .btn-ordershow {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 6px 16px;
+    border-radius: 2px;
+    color: #545454;
+    float: left;
+}
+
+.mb10 a{
+	padding: 8px 15px;
+	background: white;
+	border: solid 1px #DCDCDC;
+	color: #666;
+}
+
+.order_content{
+	margin-top:30px;
+	padding:10px;
+	background: white;
+	border-bottom:1px solid #DCDCDC ;
+	border-top:1px solid #DCDCDC ;
+}
+
+.tiao_color{
+	color:red;
+}

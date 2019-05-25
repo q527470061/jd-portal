@@ -1,0 +1,426 @@
+ｓｓ<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>商品详情</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/vue.js"></script>
+
+<!-- 自己的-->
+<!-- 自定义组件-->
+<script src="/js/vue_componet.js"></script>
+<link rel="stylesheet" href="/css/top.css" />
+<link rel="stylesheet" href="/css/component.css" />
+<script type="text/javascript" src="/js/jd.js"></script>
+
+<link rel="stylesheet" href="/css/item.css" />
+</head>
+
+<body>
+	<div id="componet_top">
+		<jd-top1 :top_param1="top_param1" :top_param2="top_param2"></jd-top1>
+		<jd-top2 :top2_param1="top2_param1" :top2_param2="top2_param2"
+			lie="col-md-6"></jd-top2>
+		<jd-top-middle :topmiddle_layout="middle_layout"
+			:topmiddle_innner="middle_inner"></jd-top-middle>
+		<jd-top3 :top3_param="top3_param"></jd-top3>
+	</div>
+
+	<div class="container top4">
+		<img src="/img/top4.jpg" />
+	</div>
+	<div class="container top5">
+		<div class="col-md-1"></div>
+		<div class="col-md-5">
+			<ul class="nav nav-pills">
+				<li><a href="#">服饰内衣&nbsp;&nbsp;&nbsp;></a></li>
+				<li><a href="#">男装&nbsp;&nbsp;&nbsp;></a></li>
+				<li><a href="#">T恤&nbsp;&nbsp;&nbsp;></a></li>
+				<li><a href="#"> 鳄鱼恤（CROCODILE）&nbsp;&nbsp;&nbsp; ></a></li>
+				<li><a href="#">鳄鱼恤短袖T恤...</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="container body" id="body">
+		<div class="row body_item">
+			<div class="col-md-3 text-left itemaside">
+				<div class="row">
+					<img :src="item.image" class="item_pic1" />
+				</div>
+				<div class="row">
+					<div class="col-md-2" style="margin-left: -10px;">
+						<span class="jiantou" style="margin-left: -10px;"><</span>
+					</div>
+					<div class="col-md-8 minicon">
+						<img src="/img/item_ex1.jpg" /> <img src="/img/item_ex1.jpg" />
+						<img src="/img/item_ex1.jpg" /> <img src="/img/item_ex1.jpg" />
+					</div>
+					<div class="col-md-2 pull-right" style="margin-right: -10px;">
+						<span class="jiantou ">></span>
+					</div>
+				</div>
+				<div class="row"
+					style="margin-top: 10px; color: #696969; font-size: 12px;">
+					<div class="col-md-3">
+						<span style="color: red; margin-left: -20px; font-size: 15px;"
+							class="glyphicon glyphicon-heart-empty"></span>&nbsp;关注
+					</div>
+					<div class="col-md-9 text-right">举报</div>
+				</div>
+			</div>
+			<div class="col-md-7 item_main">
+				<div class="row">
+					<span class="item_title">{{item.title}}</span>
+				</div>
+				<div class="row item_point">
+					<span>{{item.sellPoint}}</span><span><a href="#">等你来抢，点击更多好货</a></span>
+				</div>
+
+				<div class="row item_price">
+					<div class="row">
+						<div class="dt">京 东 价</div>
+						<div class="item_price_zhen">￥{{item.price/100}}</div>
+						<div class="dj">
+							<span style="margin-left: 29px;">[吊牌价：￥299.00]</span> <a href="#">降价通知</a>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 15px;">
+						<div class="dt">促 销</div>
+						<span class="item_price_you">多买优惠</span> <span
+							style="margin-left: 29px; color: #808080; font-size: 12px;">
+							满2件，总价打6折；满3件，总价打5折 详情 >></span>
+					</div>
+				</div>
+				<div class="row " style="margin-top: 20px;">
+					<div class="dt" style="margin-left: -12px; margin-right: 20px;">配
+						送 至</div>
+
+					<span class="text dropdown-toggle" data-res="">北京朝阳区三环以内<b
+						class="caret "></b></span>
+
+					<div id="store-prompt" class="store-prompt dt">
+						<strong>有货</strong>
+					</div>
+					<div style="float: left; margin-left: 20px;">
+						<span style="float: left;">支持</span> <a href="#"
+							style="float: left; margin-left: 20px;">货到付款</a><span class="dt">免运费</span>
+					</div>
+				</div>
+				<div class="row"
+					style="margin-top: 15px; padding-bottom: 10px; border-bottom: solid 1px #DCDCDC;">
+					<div class="dt" style="margin-left: 60px;">
+						由 <a href="#" style="margin-left: 10px; color: red;">京东自营官方旗舰店</a>,
+						并提供售后服务.
+					</div>
+				</div>
+				<div class="row" style="margin-top: 20px;">
+					<div class="col-md-3 text-left">
+						<span class="dt" style="margin-left: -30px; margin-top: 30px;">选择款式</span>
+					</div>
+					<div class="col-md-9 text-left" style="margin-left: -80px;">
+						<img class="tupian_item" src="/img/item_ex1.jpg"
+							style="border: solid 1px red;" /> <img class="tupian_item"
+							src="/img/item_ex1.jpg" style="border: solid 1px white;" />
+					</div>
+				</div>
+				<div class="row" style="margin-top: 30px;">
+					<span class="dt" style="margin-left: -15px;">增值保障</span> <span
+						class="text"
+						style="border: 1px solid #DCDCDC; padding: 10px; margin-left: 20px; margin-top: -8px;">意外换新
+						￥12 <span><b class="caret "></b></span>
+					</span>
+				</div>
+				<div class="row" style="margin-top: 30px;">
+					<span class="dt" style="margin-left: -15px;">京东服务</span> <span
+						class="text"
+						style="border: 1px solid #DCDCDC; padding: 10px; margin-left: 20px; margin-top: -8px;">原厂服务
+						<span><b class="caret "></b></span>
+					</span>
+				</div>
+				<div class="row"
+					style="margin-top: 30px; padding-bottom: 10px; border-bottom: solid 1px #DCDCDC;">
+					<span class="dt" style="margin-left: -15px;">白条分期</span> <span
+						class="text"
+						style="border: 1px solid #DCDCDC; padding: 10px; margin-left: 20px; margin-top: -8px;">￥1217.33起×3期</span>
+					<span class="text"
+						style="border: 1px solid #DCDCDC; padding: 10px; margin-left: 20px; margin-top: -8px;">￥617.64起×6期</span>
+					<span class="text"
+						style="border: 1px solid #DCDCDC; padding: 10px; margin-left: 20px; margin-top: -8px;">￥317.86起×12期</span>
+					<span class="text"
+						style="border: 1px solid #DCDCDC; padding: 10px; margin-left: 20px; margin-top: -8px;">￥167.83起×24期</span>
+				</div>
+				<div class="row" style="margin-top: 30px;">
+					<span class="dt"> <input type="number" class="inputnum"
+						v-model="num" />
+					</span> <span>
+						<button type="button" class="btn btn-danger"
+							style="margin-left: 30px; margin-top: -5px;" @click="addCart">
+							加入购物车</button>
+					</span>
+				</div>
+			</div>
+			<div class="col-md-2" style="margin-left: -55px; padding-top: 20px;">
+				<div class="row text-center">
+					<span class="font1">看了又看</span>
+				</div>
+				<div class="row" style="margin-top: 20px;">
+					<div class="row text-center">
+						<img src="/img/rigtht1.jpg" />
+					</div>
+					<div class="row text-center" style="margin-left: 30px;">
+						<span class="text">阿依莲2018夏装新款简洁...</span>
+					</div>
+					<div class="row text-center">
+						<span class="money1">￥179.00</span>
+					</div>
+				</div>
+
+				<div class="row" style="margin-top: 10px;">
+					<div class="row text-center">
+						<img src="/img/right2.jpg" />
+					</div>
+					<div class="row text-center" style="margin-left: 30px;">
+						<span class="text">阿依莲2018夏装新款简洁...</span>
+					</div>
+					<div class="row text-center">
+						<span class="money1">￥179.00</span>
+					</div>
+				</div>
+
+				<div class="row" style="margin-top: 10px;">
+					<div class="row text-center">
+						<img src="/img/right3.jpg" />
+					</div>
+					<div class="row text-center" style="margin-left: 30px;">
+						<span class="text">阿依莲2018夏装新款简洁...</span>
+					</div>
+					<div class="row text-center">
+						<span class="money1">￥179.00</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row dian">
+			<div class="col-md-1 text-center"
+				style="background: red; height: 100%; padding-top: 10px;">
+				<span style="color: white; font-size: 15px;">店长推荐</span>
+			</div>
+		</div>
+		<div class="row diancontent text-left">
+			<div class="text-center">
+				<div>
+					<img src="/img/xia1.jpg" />
+				</div>
+				<span style="maring-top: 10px">暂无报价</span>
+			</div>
+			<div class="text-center">
+				<div>
+					<img src="/img/xia1.jpg" />
+				</div>
+				<span style="maring-top: 10px">暂无报价</span>
+			</div>
+			<div class="text-center">
+				<div>
+					<img src="/img/xia1.jpg" />
+				</div>
+				<span style="maring-top: 10px">暂无报价</span>
+			</div>
+			<div class="text-center">
+				<div>
+					<img src="/img/xia1.jpg" />
+				</div>
+				<span style="maring-top: 10px">暂无报价</span>
+			</div>
+		</div>
+
+		<div class="row dian item_content">
+			<ul class="nav nav-pills">
+				<li style="background: red; width: 100px;" @click="showContent">
+					<a style="color: white;" href="javascript:;">商品介绍</a>
+				</li>
+				<li><a href="javascript:;" @click="showGuige">规格与包装</a></li>
+				<li><a href="#">售后保障</a></li>
+				<li><a href="#">商品评价(30+)</a></li>
+				<li><a href="#">本店好评商品</a></li>
+			</ul>
+		</div>
+		<div v-if="showcontent" class="row" id="item_content"
+			v-html="itemDesc"></div>
+		<div v-else class="row" id="item_param ">
+			<table class="table bigtable" style="width: 98%;">
+				<thead v-for="zhuparam in zhuparams">
+					<td class="text-right big_param" style="width: 200px;">{{zhuparam.group}}</td>
+					<td style="width: 100%;">
+						<table class="tparam" style="width: 100%;">
+							<tr v-for="param in zhuparam.params">
+								<td class="text-right " style="width: 150px;">{{param.k}}</td>
+								<td class="text-right" style="width: 50px;"></td>
+								<td class="text-left" style="">{{param.v}}</td>
+							</tr>
+						</table>
+					</td>
+				</thead>
+
+			</table>
+		</div>
+	</div>
+
+	<!-- 顶部搜索-->
+	<div id="head_search">
+		<jd-search v-if="show"></jd-search>
+	</div>
+
+	<div id="foot" style="width: 100%; height: 200px; background: #D3D3D3;">
+		<jd-footer></jd-footer>
+	</div>
+</body>
+
+<script>
+		//常量定义
+		//搜索系统
+		const base_search_url = 'http://localhost:8086/search/item/query?q=';
+		//rest系统
+		const base_rest_url = 'http://localhost:8083/rest';
+		//整个页面所要的itemid
+		var item_id = sessionStorage.getItem('item_id');
+
+		//自定义顶层组件
+		new Vue({
+			el: '#componet_top',
+			data: {
+				top_param1: {
+					position: 'relative',
+					left: '65px',
+				},
+				top_param2: {
+					position: 'relative',
+					right: '20px',
+				},
+				top2_param1: {
+					position: 'relative',
+					left: '65px',
+				},
+				top2_param2: {
+					position: 'relative',
+					right: '10px',
+				},
+				top3_param: {
+					position: 'relative',
+					left: '65px',
+					'margin-top': '8px',
+				},
+				middle_layout: {
+					'margin-top': '-25px'
+				},
+				middle_inner: {
+					'margin-left': '20px',
+					'margin-bottom': '-10px'
+				}
+			}
+		})
+		var body = new Vue({
+			el: '#body',
+			data: {
+				item: '',
+				itemDesc: '',
+				zhuparams: [],
+				showcontent: true,
+				num:1,
+			},
+			created: function() {
+
+				fetch(base_rest_url + '/item/desc/' + item_id, {
+						method: 'GET',
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						}
+					})
+					.then(function(response) {
+						return response.json();
+					}).then(function(data) {
+						body.itemDesc = data.data;
+						debugger;
+					}).catch(function(e) {
+						console.log("Oops, error");
+					});
+
+				fetch(base_rest_url + '/item/base/' + item_id, {
+						method: 'GET',
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						}
+					})
+					.then(function(response) {
+						return response.json();
+					}).then(function(data) {
+						body.item = data.data;
+						debugger;
+					}).catch(function(e) {
+						console.log("Oops, error");
+					});
+
+				fetch(base_rest_url + '/item/param/' + item_id, {
+						method: 'GET',
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						}
+					})
+					.then(function(response) {
+						return response.json();
+					}).then(function(data) {
+						body.zhuparams = data;
+						debugger;
+					}).catch(function(e) {
+						console.log("Oops, error");
+						debugger;
+					});
+
+			},
+			methods: {
+				showContent() {
+					this.showcontent = true;
+				},
+				showGuige() {
+					this.showcontent = false;
+				},
+				addCart(){
+					sessionStorage.setItem('item',JSON.stringify({'itemId':item_id,'num':this.num}));
+					window.location.href = "/page/cart/success";
+				}
+
+			}
+		})
+
+		var search1 = new Vue({
+			el: '#head_search',
+			data: {
+				show: false
+			},
+			mounted() {
+				window.addEventListener('scroll', this.handleScroll)
+			},
+			methods: {
+				handleScroll() {
+					this.x = window.scrollY;
+					if(window.scrollY >= 800) {
+						this.show = true;
+					} else {
+						this.show = false;
+					}
+
+				}
+			}
+		})
+		
+		//底部
+		new Vue({
+			el: '#foot'
+		})
+	</script>
+
+</html>

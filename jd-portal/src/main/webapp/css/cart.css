@@ -1,0 +1,70 @@
+div {
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.success-wrap {
+	height: 145px;
+	background: #f5f5f5;
+	margin-bottom: 20px;
+}
+
+.addcart {
+	width: 100%;
+}
+
+.addqu {
+	padding-top: 0px;
+	width: 80.5%;
+}
+
+.addqu>div {
+	margin-top: 20px;
+}
+
+.circle {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-borer-radius: 50%;
+	text-align: center;
+	border: 2px solid #71b247;
+	font-size: 12px;
+	color: #71b247;
+	padding-top: 5px;
+}
+
+.font_msg {
+	color: #71b247;
+	font-size: 18px;
+	line-height: 25px;
+	font-weight: 400;
+	margin-left: 10px;
+}
+
+.nologin-tip {
+	border: 1px solid #edd28b;
+	background: #fffdee;
+	padding: 10px 20px;
+	line-height: 25px;
+	margin-bottom: 20px;
+	color: #f70;
+}
+
+.l-tip .wicon, .nologin-tip .wicon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    background: url(//misc.360buyimg.com/user/cart/css/i/icon16.png) 0 0 no-repeat;
+}
+
+.cart-empty {
+    height: 98px;
+    padding: 80px 0 120px;
+    color: #333;
+}

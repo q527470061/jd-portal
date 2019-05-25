@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>我的京东--我的订单</title>
+
+<!--第三方包-->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/vue.js"></script>
+<!-- 自己的-->
+<!-- 自定义组件-->
+<script src="js/vue_componet.js"></script>
+<link rel="stylesheet" href="css/top.css" />
+<link rel="stylesheet" href="css/component.css" />
+<script type="text/javascript" src="js/jd.js"></script>
+
+<link rel="stylesheet" href="css/order.css" />
+</head>
+
+<body>
+	<div id="top">
+		<jd-top1 :top_param1="top_param1" :top_param2="top_param2"></jd-top1>
+		<jd-top2 :top2_param1="top2_param1" :top2_param2="top2_param2"
+			lie="col-md-5" style="background: red;"></jd-top2>
+	</div>
+
+	<div class="container" id="main">
+		<table class="table table-bordered table-hover"
+			v-for="order in orderCustoms" style="margin-top: 30px;">
+			<thead>
+				<tr style="background: red">
+					<th colspan="2" height="15px"
+						style="height: 20px; border-top: 0px; border-left: 0px; border-right: 0px;">
+						订单编号:&nbsp;&nbsp;<strong
+						style="font-size: 10px; color: rgb(245, 245, 245);">
+							{{order.orderId}} </strong> &nbsp;&nbsp;&nbsp;&nbsp;
+					</th>
+					<th colspan="1">订单状态：&nbsp;&nbsp; <strong
+						v-if="order.status==1"
+						style="font-size: 10px; color: rgb(245, 245, 245);">未付款</strong> <strong
+						v-if="order.status==2"
+						style="font-size: 10px; color: rgb(245, 245, 245);">已付款</strong> <strong
+						v-if="order.status==3"
+						style="font-size: 10px; color: rgb(245, 245, 245);">未发货</strong> <strong
+						v-if="order.status==4"
+						style="font-size: 10px; color: rgb(245, 245, 245);">已发货</strong> <strong
+						v-if="order.status==5"
+						style="font-size: 10px; color: rgb(245, 245, 245);">交易成功</strong>
+						<strong v-if="order.status==6"
+						style="font-size: 10px; color: rgb(245, 245, 245);">交易关闭</strong>
+					</th>
+					<th colspan="2">创建时间：&nbsp;&nbsp;<strong
+						style="font-size: 10px; color: rgb(245, 245, 245);">{{order.createTime}}</strong></th>
+				</tr>
+				<tr style="background: #F5F5F5">
+					<th width="80px" height="30px">图片</th>
+					<th>商品</th>
+					<th>价格</th>
+					<th>数量</th>
+					<th>小计</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr style="font-size: 12px" v-for="orderItem in order.orderItems">
+					<td width="80px"><img :src="orderItem.picPath" width="80px"
+						height="70px"></td>
+					<td>{{orderItem.title}}</td>
+					<td>￥{{orderItem.price/100}}</td>
+					<td>{{orderItem.num}}</td>
+					<td>￥{{orderItem.totalFee/100}}</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr style="background: #F5F5F5">
+					<template v-if="order.status==5">
+					<th colspan="2">合计：<span style="color: red;">{{order.payment}}￥</span></th>
+					<th colspan="2" class="text-center">交易已完成</th>
+					<th colspan="1" class="text-right"><a href="#"
+						@click="deleteOrder(order.orderId)">删除</a></th>
+					</template>
+					<template v-else-if="order.status==6">
+					<th colspan="2">合计：<span style="color: red;">{{order.payment}}￥</span></th>
+					<th colspan="2" class="text-center">订单已取消</th>
+					<th class="text-right"><a href="#"
+						@click="deleteOrder(order.orderId)">删除</a></th>
+					</template>
+					<template v-else>
+					<th colspan="2">合计：<span style="color: red;">{{order.payment}}￥</span></th>
+					<th class="text-right"><a href="#"
+						@click="updateStatus(order.orderId,5,order.status)">确认收货</a></th>
+					<th class="text-right"><a href="#"
+						@click="updateStatus(order.orderId,6,order.status)">取消订单</a></th>
+					<th class="text-right"><a href="#"
+						@click="updateStatus(order.orderId,2,order.status)">立即支付</a></th>
+					</template>
+				</tr>
+			</tfoot>
+		</table>
+		<div class="row text-right pagemenu" style="margin-right: 50px">
+			<ul class="pagination">
+				<li><a href="#" @click="pageup">&laquo;</a></li>
+
+				<li v-for="num in pageCount"><a href="#"
+					@click="updatalist(num)"> <span v-if="num==curPage"
+						style="color: red">{{num}}</span> <span v-else>{{num}}</span>
+				</a></li>
+
+				<li><a href="#" @click="pagedn">&raquo;</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+
+<script>
+		const UPDATE_STATUS="/order/update/status/";
+		const DELETE_ORDER="/order/delete/"
+		//top componet
+		new Vue({
+			el: '#top',
+			data: {
+				top_param1: {
+					position: 'relative',
+					left: '130px',
+				},
+				top_param2: {
+					position: 'relative',
+					right: '35px',
+				},
+				top2_param1: {
+					position: 'relative',
+					left: '130px',
+				},
+				top2_param2: {
+
+				},
+			}
+		})
+
+		var main = new Vue({
+			el: '#main',
+			data: {
+				orderCustoms: [],
+				pageCount:2,
+				curPage:1,
+			},
+			created: function() {
+				fetch('/order/list/1/2', {
+						method: 'GET',
+						headers: {
+							"Content-Type": "application/json"
+						}
+					})
+					.then(function(response) {
+						return response.json();
+					}).then(function(data) {
+						main.orderCustoms = data.data.orderCustoms;
+						main.pageCount=data.data.pageCount;
+						main.curPage=data.data.curPage;
+					}).catch(function(e) {
+						console.log("Oops, error");
+					});
+			},methods:{
+				pageup() {
+					fetch('/order/list/' + (this.curPage - 1)+'/'+2, {
+							method: 'GET',
+							headers: {
+								"Content-Type": "application/x-www-form-urlencoded"
+							}
+						})
+						.then(function(response) {
+							return response.json();
+						}).then(function(data) {
+							main.orderCustoms = data.data.orderCustoms;
+							main.pageCount=data.data.pageCount;
+							main.curPage=data.data.curPage;
+						}).catch(function(e) {
+							console.log("Oops, error");
+							debugger;
+						});
+				},
+				pagedn() {
+					fetch('/order/list/' + (this.curPage+ 1)+'/'+2, {
+						method: 'GET',
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						}
+					})
+					.then(function(response) {
+						return response.json();
+					}).then(function(data) {
+						main.orderCustoms = data.data.orderCustoms;
+						main.pageCount=data.data.pageCount;
+						main.curPage=data.data.curPage;
+					}).catch(function(e) {
+						console.log("Oops, error");
+						debugger;
+					});
+				},
+				updatalist(num) {
+					fetch('/order/list/' + num+'/'+2, {
+						method: 'GET',
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						}
+					})
+					.then(function(response) {
+						return response.json();
+					}).then(function(data) {
+						main.orderCustoms = data.data.orderCustoms;
+						main.pageCount=data.data.pageCount;
+						main.curPage=data.data.curPage;
+					}).catch(function(e) {
+						console.log("Oops, error");
+						debugger;
+					});
+				},
+				deleteOrder(id){
+					fetch(ORDER_SERVER+DELETE_ORDER+id, {
+						method: 'POST',
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						}
+					})
+					.then(function(response) {
+						return response.json();
+					}).then(function(data) {
+						if(data.status==200){
+							window.location.reload();
+						}else{
+							alert("出现问题");
+						}
+					}).catch(function(e) {
+						console.log("Oops, error");
+						debugger;
+					});
+				},
+				//更新订单状态
+				updateStatus(id,status,preStatus){
+					if(status!=6&&status!=preStatus+1){
+						alert("非法操作");
+						return false;
+					}
+					fetch(ORDER_SERVER+UPDATE_STATUS+id+"/"+status, {
+						method: 'POST',
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						}
+					})
+					.then(function(response) {
+						return response.json();
+					}).then(function(data) {
+						if(data.status==200){
+							window.location.reload();
+						}else{
+							alert("出现问题");
+						}
+					}).catch(function(e) {
+						console.log("Oops, error");
+						debugger;
+					});
+				}				
+			},
+		})
+	</script>
+
+</html>

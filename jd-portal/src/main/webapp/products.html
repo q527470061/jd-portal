@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>商品列表页</title>
+		<!--第三方包-->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/vue.js"></script>
+		<!-- 自己的-->
+		<!-- 自定义组件-->
+		<script src="/js/vue_componet.js"></script>
+		<link rel="stylesheet" href="/css/top.css" />
+		<link rel="stylesheet" href="/css/component.css" />
+		<script type="text/javascript" src="/js/jd.js"></script>
+
+		<link rel="stylesheet" href="/css/body.css" />
+	</head>
+
+	<body>
+
+		<div id="componet_top">
+			<jd-top1></jd-top1>
+			<jd-top2 lie="col-md-7"></jd-top2>
+			<jd-top-middle :topmiddle_layout="middle_layout" :topmiddle_innner="middle_inner"></jd-top-middle>
+			<jd-top3 :top3_param="top3_param"></jd-top3>
+		</div>
+
+		<div class="container body">
+			<div class="row hot-sales">
+				<div class="col-md-1 text-center hot_title">
+					<font style="color: red;">热卖</font><br>
+					<font style="color: red;">推荐</font>
+				</div>
+
+				<div class="col-md-3 hot">
+					<div class="col-md-5">
+						<img src="img/hot1.jpg" width="100%" />
+					</div>
+					<div class="col-md-7">
+						<div class="row pull-left" style="margin-top: 20px; ">
+							FEMLY 法曼丽 新款通勤气质大摆长裙网纱刺绣修身连衣
+						</div>
+						<div class="row pull-left" style="color: red; font-weight: bold;font-size: 14px;margin-top: 5px;">
+							￥619.00
+						</div>
+						<div class="row pull-left" style="margin-top: 28px;margin-left: -40px;">
+							<input type="button" value="立即抢购" style="padding: 3px;background:#F5F5F5;color: grey;border: solid 1px 	#D3D3D3;" />
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 hot">
+					<div class="col-md-5">
+						<img src="img/hot2.jpg" width="100%" />
+					</div>
+					<div class="col-md-7">
+						<div class="row pull-left" style="margin-top: 20px; ">
+							百洛安气质V领连衣裙女2018夏季新款黑白波点收腰修身
+						</div>
+						<div class="row pull-left" style="color: red; font-weight: bold;font-size: 14px;margin-top: 5px;">
+							￥226.00
+						</div>
+						<div class="row pull-left" style="margin-top: 28px;margin-left: -40px;">
+							<input type="button" value="立即抢购" style="padding: 3px;background:#F5F5F5;color: grey;border: solid 1px 	#D3D3D3;" />
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3 hot">
+					<div class="col-md-5">
+						<img src="img/hot3.jpg" width="100%" />
+					</div>
+					<div class="col-md-7">
+						<div class="row pull-left" style="margin-top: 20px; ">
+							百洛安短袖连衣裙女夏季新款收腰显瘦纯色中长裙气质
+						</div>
+						<div class="row pull-left" style="color: red; font-weight: bold;font-size: 14px;margin-top: 5px;">
+							￥218.00
+						</div>
+						<div class="row pull-left" style="margin-top: 28px;margin-left: -40px;">
+							<input type="button" value="立即抢购" style="padding: 3px;background:#F5F5F5;color: grey;border: solid 1px 	#D3D3D3;" />
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- 商品列表  -->
+			<div class="row products">
+				<div class="col-md-2 select">
+					<div class="row ">
+						<div class="col-md-6 text-left">
+							<span style=" font-size: 14px;font-weight: bold;">商品精选</span>
+						</div>
+						<div class="col-md-6 text-right">
+							<span style="font-size:8px;color: #D3D3D3;">广告</span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="row select_left">
+							<img src="img/left1.jpg" /><br>
+							<span class="select_title">
+								金菊早春新款女装真丝连衣裙女圆领中袖桑蚕丝长裙宽松显瘦中国风
+							</span>
+							<span class="select_money">￥899.00</span>
+							<div class="select_pingjia">已有206人评价</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="row select_left">
+							<img src="img/left1.jpg" /><br>
+							<span class="select_title">
+								金菊早春新款女装真丝连衣裙女圆领中袖桑蚕丝长裙宽松显瘦中国风
+							</span>
+							<span class="select_money">￥899.00</span>
+							<div class="select_pingjia">已有206人评价</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="row select_left">
+							<img src="img/left1.jpg" /><br>
+							<span class="select_title">
+								金菊早春新款女装真丝连衣裙女圆领中袖桑蚕丝长裙宽松显瘦中国风
+							</span>
+							<span class="select_money">￥899.00</span>
+							<div class="select_pingjia">已有206人评价</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="row select_left">
+							<img src="img/left1.jpg" /><br>
+							<span class="select_title">
+								金菊早春新款女装真丝连衣裙女圆领中袖桑蚕丝长裙宽松显瘦中国风
+							</span>
+							<span class="select_money">￥899.00</span>
+							<div class="select_pingjia">已有206人评价</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="row select_left">
+							<img src="img/left1.jpg" /><br>
+							<span class="select_title">
+								金菊早春新款女装真丝连衣裙女圆领中袖桑蚕丝长裙宽松显瘦中国风
+							</span>
+							<span class="select_money">￥899.00</span>
+							<div class="select_pingjia">已有206人评价</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="row select_left">
+							<img src="img/left1.jpg" /><br>
+							<span class="select_title">
+								金菊早春新款女装真丝连衣裙女圆领中袖桑蚕丝长裙宽松显瘦中国风
+							</span>
+							<span class="select_money">￥899.00</span>
+							<div class="select_pingjia">已有206人评价</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-10 items" id="itemlist">
+					<div class="row filter">
+						<div class="row filter_line filter_top">
+							<div class="row">
+								<div class="col-md-6 text-left filter_top_left">
+									<ul class="nav nav-pills text-center">
+										<li style="background: red;">
+											<a href="#" style="color: white;">综合排序</a>
+										</li>
+										<li>
+											<a href="#">销量</a>
+										</li>
+										<li>
+											<a href="#">价格</a>
+										</li>
+										<li>
+											<a href="#">评论数</a>
+										</li>
+										<li>
+											<a href="#">上架时间</a>
+										</li>
+									</ul>
+								</div>
+								<div class="col-md-6 text-right filter_top_right">
+									<ul class="pagination">
+										<li>
+											<a href="#">&laquo;</a>
+										</li>
+										<li>
+											<a href="#">&raquo;</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="row filter_line filter_buttom">
+
+						</div>
+					</div>
+
+					<div class="row productslist">
+						<ul>
+							<li v-for="item in itemList">
+								<div class="row">
+									<a href="javascript:;" @click="forwardItem(item.id)"><img :src="item.image" /></a>
+									<img src="img/exaple1.jpg" style="display: none;" />
+								</div>
+								<div class="row">
+									<span>
+										<img :src="item.image"/>
+									</span>
+									<span>
+										<img src="img/exaple2.jpg" />
+									</span>
+								</div>
+								<div class="row lists_money">
+									<span>
+										￥{{item.price/100}}
+									</span>
+								</div>
+								<div class="row lists_title">
+									<span v-html="item.title">
+									
+									</span>
+								</div>
+								<div class="row lists_mark">
+									<span>
+										自营
+									</span>
+								</div>
+								<div class="row text-center lists_shop">
+									<div>
+										<ul>
+											<li></li>
+											<li><span class="glyphicon glyphicon-heart-empty">关注</span></li>
+											<li style="width: 90px;color:red;"><span class="glyphicon glyphicon-shopping-cart">加入购物车</span></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+					<div class="row text-right pagemenu">
+						<ul class="pagination">
+							<li>
+								<a href="#" @click="pageup">&laquo;</a>
+							</li>
+
+							<li v-for="num in pageCount">
+								<a href="#" @click="updatalist(num)">{{num}}</a>
+							</li>
+
+							<li>
+								<a href="#" @click="pagedn">&raquo;</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="row  cainan">
+
+			</div>
+
+		</div>
+
+		<!-- 顶部搜索-->
+		<div id="head_search">
+			<jd-search v-if="show"></jd-search>
+		</div>
+		
+		<!--底部-->
+		<div id="foot" style="width: 100%;height: 200px;background:	#D3D3D3;">
+			<jd-footer></jd-footer>
+		</div>
+	</body>
+
+	<script>
+		//进行处理按照分类进来的请求
+
+		/*var Base_Search_Server = 'http://localhost:8084/search/item/query?q=';*/
+		var search = sessionStorage.getItem('query');
+		var cate_id = sessionStorage.getItem('cate_id');
+		var base_url = '';
+		if(search != null && search != '' && search.length != 0) {
+			base_url = 'http://localhost:8086/search/item/query?q=' + search;
+		} else if(cate_id != null && cate_id != cate_id.length != 0) {
+			base_url = 'http://localhost:8083/rest/item/list?q=' + cate_id;
+		} else {
+			alert("操作失敗！")
+		}
+		//自定义顶层组件
+		new Vue({
+			el: '#componet_top',
+			data: {
+				top3_param: {
+					'margin-top': '8px',
+				},
+				middle_layout: {
+					'margin-top': '-25px'
+				},
+				middle_inner: {
+					'margin-left': '-94px',
+					'margin-bottom': '-10px'
+				}
+			}
+		})
+
+		var itemlist = new Vue({
+			el: '#itemlist',
+			data: {
+				itemList: [],
+				recordCount: 0,
+				pageCount: 0,
+				curPage: 0
+			},
+			created: function() {
+				//进行处理搜索进来的请求
+
+				fetch(base_url, {
+						method: 'GET',
+						headers: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						}
+					})
+					.then(function(response) {
+						return response.json();
+					}).then(function(data) {
+						itemlist.itemList = data.data.itemList;
+						itemlist.recordCount = data.data.recordCount;
+						itemlist.pageCount = data.data.pageCount;
+						itemlist.curPage = data.data.curPage;
+						debugger;
+					}).catch(function(e) {
+						console.log("Oops, error");
+						debugger;
+					});
+			},
+			methods: {
+				pageup() {
+					var search = sessionStorage.getItem('query');
+					fetch(base_url + '&page=' + (itemlist.curPage + 1), {
+							method: 'GET',
+							headers: {
+								"Content-Type": "application/x-www-form-urlencoded"
+							}
+						})
+						.then(function(response) {
+							return response.json();
+						}).then(function(data) {
+							itemlist.itemList = data.data.itemList;
+							itemlist.recordCount = data.data.recordCount;
+							itemlist.pageCount = data.data.pageCount;
+							itemlist.curPage = data.data.curPage;
+							debugger;
+						}).catch(function(e) {
+							console.log("Oops, error");
+							debugger;
+						});
+				},
+				pagedn() {
+					var search = sessionStorage.getItem('query');
+					fetch(base_url + '&page=' + (itemlist.curPage - 1), {
+							method: 'GET',
+							headers: {
+								"Content-Type": "application/x-www-form-urlencoded"
+							}
+						})
+						.then(function(response) {
+							return response.json();
+						}).then(function(data) {
+							itemlist.itemList = data.data.itemList;
+							itemlist.recordCount = data.data.recordCount;
+							itemlist.pageCount = data.data.pageCount;
+							itemlist.curPage = data.data.curPage;
+							debugger;
+						}).catch(function(e) {
+							console.log("Oops, error");
+							debugger;
+						});
+				},
+				updatalist(num) {
+					var search = sessionStorage.getItem('query');
+					fetch(base_url + '&page=' + num, {
+							method: 'GET',
+							headers: {
+								"Content-Type": "application/x-www-form-urlencoded"
+							}
+						})
+						.then(function(response) {
+							return response.json();
+						}).then(function(data) {
+							itemlist.itemList = data.data.itemList;
+							itemlist.recordCount = data.data.recordCount;
+							itemlist.pageCount = data.data.pageCount;
+							itemlist.curPage = data.data.curPage;
+							debugger;
+						}).catch(function(e) {
+							console.log("Oops, error");
+						});
+				},
+				forwardItem(id) {
+					sessionStorage.setItem('item_id', id);
+					window.location.href = "/page/item";
+				}
+
+			}
+		})
+
+		var search1 = new Vue({
+			el: '#head_search',
+			data: {
+				show: false
+			},
+			mounted() {
+				window.addEventListener('scroll', this.handleScroll)
+			},
+			methods: {
+				handleScroll() {
+					this.x = window.scrollY;
+					if(window.scrollY >= 700) {
+						this.show = true;
+					} else {
+						this.show = false;
+					}
+
+				}
+			}
+		})
+		
+		new Vue({
+			el: '#foot'
+		})
+	</script>
+
+</html>
